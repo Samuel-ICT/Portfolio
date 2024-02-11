@@ -8,7 +8,7 @@
         </div>
 
         <!-- Navigatielinks met een verborgen mobiel menu -->
-        <div class="nav-links duration-500  md:static absolute md:min-h-fit min-h-[40vh] left-0 top-full md:w-auto w-full flex items-center px-5 bg-gray-800 text-white py-4 z-10">
+        <div class="nav-links duration-500 absolute md:min-h-fit min-h-[40vh] left-0 top-full md:w-auto w-full flex items-center px-5 bg-gray-800 text-white py-4 z-10">
             <ul class="flex md:flex-row flex-col md:items-center md:gap-[4vw] gap-8">
                 <li>
                     <a class="hover:text-indigo-600" href="{{ url('/') }}">Home</a>
@@ -54,8 +54,10 @@
 <style>
     @media (min-width: 768px) {
         .nav-links {
+            position: static;
             background-color: white;
             color: black;
+            display: flex;
         }
     }
 </style>
