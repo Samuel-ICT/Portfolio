@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
-    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script> 
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script src="https://kit.fontawesome.com/533bbf524f.js" crossorigin="anonymous"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.1.1/flowbite.min.css" rel="stylesheet" />
     @vite('resources/css/app.css')
@@ -77,13 +77,13 @@
             <!-- Trending producten met afbeeldingen en prijsinformatie -->
             <div class="flex overflow-x-auto gap-6 pt-{-20px}">
                 @foreach($trending as $trending)
-                    <div class="shrink-0 items-center h-[300px]">
-                        <a href="{{url('product', $trending->slug)}}">
-                            <img class="w-full h-full object-cover mt-[-73px]" src="/product/{{$trending->foto}}" alt="">
-                        </a>
-                        <h4 class="text-lg font-bold p-2">€{{$trending->prijs}}</h4>
-                        <h4 class="text-lg font-medium">{{$trending->naam}}  {{$trending->categorie}}</h4>
-                    </div>
+                <div class="shrink-0 items-center h-[300px]">
+                    <a href="{{url('product', $trending->slug)}}">
+                        <img class="w-full h-full object-cover mt-[-73px]" src="/product/{{$trending->foto}}" alt="">
+                    </a>
+                    <h4 class="text-lg font-bold p-2">€{{$trending->prijs}}</h4>
+                    <h4 class="text-lg font-medium">{{$trending->naam}} {{$trending->categorie}}</h4>
+                </div>
                 @endforeach
             </div>
         </div>
@@ -97,15 +97,15 @@
             <!-- Nieuwe producten met afbeeldingen, prijsinformatie en "Nieuw" label -->
             <div class="grid md:grid-cols-4 gap-6 sm:grid-cols-2 gap-6">
                 @foreach($nieuw as $product)
-                    <div class="relative">
-                        <!-- "Nieuw" label -->
-                        <span class="bg-gray-100 text-gray-800 text-sm font-medium absolute top-0 left-0 px-2.5 py-0.5  dark:bg-gray-900 dark:text-gray-300">Nieuw</span>
-                        <a href="{{url('product', $product->slug)}}">
-                            <img src="/product/{{$product->foto}}" alt="">
-                        </a>
-                        <h4 class="text-lg font-bold p-2">€{{$product->prijs}}</h4>
-                        <h4 class="text-lg font-medium">{{$product->naam}} {{$product->categorie}}</h4>               
-                    </div>
+                <div class="relative">
+                    <!-- "Nieuw" label -->
+                    <span class="bg-gray-800 text-white text-sm font-medium absolute top-0 left-0 px-2.5 py-0.5 ">Nieuw</span>
+                    <a href="{{url('product', $product->slug)}}">
+                        <img src="/product/{{$product->foto}}" alt="">
+                    </a>
+                    <h4 class="text-lg font-bold p-2">€{{$product->prijs}}</h4>
+                    <h4 class="text-lg font-medium">{{$product->naam}} {{$product->categorie}}</h4>
+                </div>
                 @endforeach
             </div>
         </div>
