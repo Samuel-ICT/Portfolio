@@ -16,14 +16,11 @@ module.exports = {
             lg: '976px',
             xl: '1440px',
         },
-        // colors:{
-        //     'light-blue': '#3C9E9A'
-        // },
         extend: {
+            
             fontFamily: {
                 sans: ['Figtree', ...defaultTheme.fontFamily.sans],
             },
-            
         },
     },
 
