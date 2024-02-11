@@ -23,7 +23,7 @@
             <!-- Knop voor het terugkeren naar de categoriepagina -->
             <div class="pt-11">
                 <a href="{{ url('admin/categorie') }}">
-                    <button class="bg-indigo-600 dark:hover:bg-indigo-700 text-white px-5 py-2 rounded-lg">
+                    <button class="bg-indigo-600 text-white px-5 py-2 rounded-lg">
                         <span class="pr-3"><i class="fa-solid fa-arrow-left"></i></span>Terug
                     </button>
                 </a>
@@ -38,26 +38,20 @@
                 <!-- Invoerveld voor categorie-naam -->
                 <div>
                     <label for="naam" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Naam</label>
-                    <input type="text" name="naam" id="naam"
-                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
-                        required>
+                    <input type="text" name="naam" id="naam" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg dark:text-white dark:bg-gray-800 dark:border-gray-700 text-sm rounded-lg focus:ring-indigo-500 focus:border-indigo-500 block w-full p-2.5" required>
                     <!-- Weergave van foutmelding bij ongeldige categorie-naam -->
                     @error('naam')
-                    <small class="p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400"
-                        role="alert">{{ $message }}</small>
+                    <small class="p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50" role="alert">{{ $message }}</small>
                     @enderror
                 </div>
                 <!-- Invoerveld voor categorie-slug -->
                 <div>
                     <label for="slug" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Slug</label>
-                    <input type="slug" name="slug" id="slug"
-                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
-                        required>
+                    <input type="slug" name="slug" id="slug" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg dark:text-white dark:bg-gray-800 dark:border-gray-700 text-sm rounded-lg focus:ring-indigo-500 focus:border-indigo-500 block w-full p-2.5" required>
                 </div>
 
                 <!-- Knop voor het verzenden van het formulier -->
-                <button type="submit"
-                    class="w-25% text-white bg-indigo-600 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-indigo-600 dark:hover:bg-indigo-700 dark:focus:ring-blue-800">
+                <button type="submit" class="w-25% text-white bg-indigo-600 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">
                     Voeg toe
                 </button>
             </form>

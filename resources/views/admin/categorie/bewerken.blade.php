@@ -21,28 +21,28 @@
 
             <div class="pt-11">
                 <a href="{{ url('admin/categorie') }}">
-                    <button class="bg-indigo-600 dark:hover:bg-indigo-700 text-white px-5 py-2 rounded-lg">
+                    <button class="bg-indigo-600 text-white px-5 py-2 rounded-lg">
                         <span class="pr-3"><i class="fa-solid fa-arrow-left"></i></span>Terug
                     </button>
                 </a>
             </div>
         </div>
 
-        <div class="w-full p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-6 md:p-8 dark:bg-gray-800 dark:border-gray-700">
+        <div class="w-full p-4   border border-gray-200 dark:bg-gray-800 dark:border-gray-700 rounded-lg shadow sm:p-6 md:p-8">
             <!-- Formulier voor het updaten van de categorie -->
             <form class="space-y-6" action="{{url('admin/categorie/updaten',$data->id)}}" method="post">
                 @csrf
                 <div>
-                    <label for="naam" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Naam</label>
-                    <input type="text" name="naam" id="naam" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" value="{{$data->naam}}">
+                    <label for="naam" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white ">Naam</label>
+                    <input type="text" name="naam" id="naam" class="bg-gray-50 border border-gray-300 text-gray-900 dark:text-white dark:bg-gray-800 dark:border-gray-700 text-sm rounded-lg focus:ring-indigo-500 focus:border-indigo-500 block w-full p-2.5" value="{{$data->naam}}">
                 </div>
                 <div>
                     <label for="slug" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Slug</label>
-                    <input type="slug" name="slug" id="slug" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" value="{{$data->slug}}">
+                    <input type="slug" name="slug" id="slug" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg  dark:text-white dark:bg-gray-800 dark:border-gray-700 focus:ring-indigo-500 focus:border-indigo-500 block w-full p-2.5" value="{{$data->slug}}">
                 </div>
 
                 <!-- Knop voor het updaten van de categorie -->
-                <button type="submit" class="w-25% text-white bg-indigo-600 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-indigo-600 dark:hover:bg-indigo-700 dark:focus:ring-blue-800">Updaten</button>
+                <button type="submit" class="w-25% text-white bg-indigo-600 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">Updaten</button>
 
             </form>
         </div>

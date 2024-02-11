@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Categorie</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.0.0/flowbite.min.css" rel="stylesheet" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.0.0/flowbite.min.js"></script>
 </head>
 
 <body class="bg-black">
@@ -16,7 +15,7 @@
         <!-- Melding bij succesvolle actie -->
         @if(session('message'))
         <div id="alert-3"
-            class="flex items-center mt-5 p-4 mb-4 text-green-800 rounded-lg bg-green-50 dark:bg-gray-800 dark:text-green-400"
+            class="flex items-center mt-5 p-4 mb-4 text-green-800 rounded-lg bg-green-50"
             role="alert">
             <!-- Succespictogram -->
             <svg class="flex-shrink-0 w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
@@ -31,7 +30,7 @@
             </div>
             <!-- Knop voor het sluiten van de melding -->
             <button type="button"
-                class="ml-auto -mx-1.5 -my-1.5 bg-green-50 text-green-500 rounded-lg focus:ring-2 focus:ring-green-400 p-1.5 hover:bg-green-200 inline-flex items-center justify-center h-8 w-8 dark:bg-gray-800 dark:text-green-400 dark:hover:bg-gray-700"
+                class="ml-auto -mx-1.5 -my-1.5 bg-green-50 text-green-500 rounded-lg focus:ring-2 focus:ring-green-400 p-1.5 hover:bg-green-200 inline-flex items-center justify-center h-8 w-8"
                 data-dismiss-target="#alert-3" aria-label="Close">
                 <span class="sr-only">Close</span>
                 <!-- Sluitpictogram -->
@@ -59,7 +58,7 @@
 
     <div class="flex justify-center overflow-x-auto shadow-md sm:rounded-lg md:ml-40">
         <!-- Tabel voor het weergeven van categoriegegevens -->
-        <table class="w-[80%] text-sm text-left text-gray-500 dark:text-gray-400">
+        <table class="w-[80%] text-sm text-left text-gray-500">
             <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                 <tr>
                     <th scope="col" class="px-6 py-3">
@@ -79,7 +78,7 @@
             <tbody>
                 @foreach($data as $category)
                 <!-- Weergave van individuele categoriegegevens -->
-                <tr class="bg-white border-b dark:bg-gray-900 dark:border-gray-700">
+                <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 ">
                     <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                         {{ $category->naam }}
                     </th>
@@ -89,19 +88,21 @@
                     <!-- Bewerkknop -->
                     <td class="px-6 py-4">
                         <a href="{{ url('admin/categorie/bewerken', $category->id) }}"
-                            class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Bewerken</a>
+                            class="font-medium text-blue-600 hover:underline">Bewerken</a>
                     </td>
                     <!-- Verwijderknop met bevestiging -->
                     <td class="px-6 py-4">
                         <a href="{{ url('admin/categorie/verwijderen', $category->id) }}"
                             onclick="return confirm('Ben je zeker of je dit wilt verwijderen?')"
-                            class="font-medium text-red-600 dark:text-red-500 hover:underline ">Verwijderen</a>
+                            class="font-medium text-red-600 hover:underline ">Verwijderen</a>
                     </td>
                 </tr>
                 @endforeach
             </tbody>
         </table>
     </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.0.0/flowbite.min.js"></script>
 
 </body>
 
