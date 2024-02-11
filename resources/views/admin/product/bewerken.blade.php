@@ -22,7 +22,7 @@
             <div class="pt-11">
                 <!-- Terugknop naar productlijst -->
                 <a href="{{ url('admin/product') }}">
-                    <button class="bg-indigo-600 dark:hover:bg-indigo-700 text-white px-5 py-2 rounded-lg">
+                    <button class="bg-indigo-600 text-white px-5 py-2 rounded-lg">
                         <span class="pr-3"><i class="fa-solid fa-arrow-left"></i></span>Terug
                     </button>
                 </a>
@@ -30,49 +30,36 @@
         </div>
 
         <!-- Formulier voor het updaten van een product -->
-        <div
-            class="w-full p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-6 md:p-8 dark:bg-gray-800 dark:border-gray-700">
-            <form class="space-y-6" action="{{url('admin/product/updaten',$product->id)}}" enctype="multipart/form-data"
-                method="post">
+        <div class="w-full p-4 bg-white border border-gray-200 dark:bg-gray-800 dark:border-gray-700 rounded-lg shadow sm:p-6 md:p-8">
+            <form class="space-y-6" action="{{url('admin/product/updaten',$product->id)}}" enctype="multipart/form-data" method="post">
                 @csrf
                 <!-- Grid voor het organiseren van de inputvelden -->
                 <div class="grid gap-6 mb-6 md:grid-cols-2">
                     <div>
                         <!-- Naam van het product -->
-                        <label for="naam"
-                            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Naam</label>
-                        <input type="text" name="naam" id="naam" value="{{$product->naam}}"
-                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white">
+                        <label for="naam" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white ">Naam</label>
+                        <input type="text" name="naam" id="naam" value="{{$product->naam}}" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg dark:text-white dark:bg-gray-800 dark:border-gray-700 text-sm rounded-lg focus:ring-indigo-500 focus:border-indigo-500 block w-full p-2.5">
                     </div>
                     <!-- Slug van het product -->
                     <div>
-                        <label for="slug"
-                            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Slug</label>
-                        <input type="text" name="slug" id="slug" value="{{$product->slug}}"
-                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white">
+                        <label for="slug" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white ">Slug</label>
+                        <input type="text" name="slug" id="slug" value="{{$product->slug}}" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 dark:text-white dark:bg-gray-800 dark:border-gray-700 text-sm rounded-lg focus:ring-indigo-500 focus:border-indigo-500 block w-full p-2.5">
                     </div>
                     <!-- Hoeveelheid van het product -->
                     <div>
-                        <label for="hoeveelheid"
-                            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Hoeveelheid</label>
-                        <input type="number" name="hoeveelheid" value="{{$product->hoeveelheid}}" id="hoeveelheid"
-                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white">
+                        <label for="hoeveelheid" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white ">Hoeveelheid</label>
+                        <input type="number" name="hoeveelheid" value="{{$product->hoeveelheid}}" id="hoeveelheid" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg dark:text-white dark:bg-gray-800 dark:border-gray-700 text-sm rounded-lg focus:ring-indigo-500 focus:border-indigo-500 block w-full p-2.5">
                     </div>
                     <!-- Merk van het product -->
                     <div>
-                        <label for="merk"
-                            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Merk</label>
-                        <input type="text" name="merk" id="merk" value="{{$product->merk}}"
-                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white">
+                        <label for="merk" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white ">Merk</label>
+                        <input type="text" name="merk" id="merk" value="{{$product->merk}}" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg dark:text-white dark:bg-gray-800 dark:border-gray-700 text-sm rounded-lg focus:ring-indigo-500 focus:border-indigo-500 block w-full p-2.5">
                     </div>
                 </div>
                 <!-- Categorie van het product -->
                 <div>
-                    <label for="countries"
-                        class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Categorie</label>
-                    <select id="countries"
-                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                        name="categorie">
+                    <label for="countries" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white ">Categorie</label>
+                    <select id="countries" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg dark:text-white dark:bg-gray-800 dark:border-gray-700 text-sm rounded-lg focus:ring-indigo-500 focus:border-indigo-500 block w-full p-2.5" name="categorie">
                         <!-- Huidige categorie als standaardoptie -->
                         <option selected value="{{$product->categorie}}">{{$product->categorie}}</option>
                         <!-- Opties voor andere categorieën -->
@@ -83,50 +70,38 @@
                 </div>
                 <!-- Beschrijving van het product -->
                 <div>
-                    <label for="message"
-                        class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Beschrijving</label>
-                    <textarea id="beschrijving" name="beschrijving" rows="4"
-                        class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">{{$product->beschrijving}}</textarea>
+                    <label for="message" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white ">Beschrijving</label>
+                    <textarea id="beschrijving" name="beschrijving" rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 dark:text-white dark:bg-gray-800 dark:border-gray-700 text-sm rounded-lg focus:ring-indigo-500 focus:border-indigo-500 block w-full p-2.5">{{$product->beschrijving}}</textarea>
                 </div>
                 <!-- Prijs en kortingprijs van het product -->
                 <div class="grid gap-6 mb-6 md:grid-cols-2">
                     <div>
-                        <label for="prijs"
-                            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Prijs</label>
-                        <input type="text" name="prijs" id="prijs" value="{{$product->prijs}}"
-                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white">
+                        <label for="prijs" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white ">Prijs</label>
+                        <input type="text" name="prijs" id="prijs" value="{{$product->prijs}}" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg dark:text-white dark:bg-gray-800 dark:border-gray-700 text-sm rounded-lg focus:ring-indigo-500 focus:border-indigo-500 block w-full p-2.5">
                     </div>
                     <div>
-                        <label for="korting_prijs"
-                            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Kortingprijs</label>
-                        <input type="text" name="korting_prijs" id="korting_prijs" value="{{$product->korting_prijs}}"
-                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white">
+                        <label for="korting_prijs" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white ">Kortingprijs</label>
+                        <input type="text" name="korting_prijs" id="korting_prijs" value="{{$product->korting_prijs}}" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg dark:text-white dark:bg-gray-800 dark:border-gray-700 text-sm rounded-lg focus:ring-indigo-500 focus:border-indigo-500 block w-full p-2.5">
                     </div>
                 </div>
                 <!-- Huidige foto van het product -->
                 <div>
-                    <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" for="foto">Huidige
+                    <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white " for="foto">Huidige
                         Foto</label>
                     <img style="height: 200px;" src="/product/{{$product->foto}}" alt="">
                 </div>
                 <!-- Nieuwe foto voor het product -->
                 <div>
-                    <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" for="foto">Foto</label>
-                    <input
-                        class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
-                        id="foto" name="foto" type="file">
+                    <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white " for="foto">Foto</label>
+                    <input class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 focus:outline-none dark:text-white dark:bg-gray-800 dark:border-gray-700 text-sm rounded-lg focus:ring-indigo-500 focus:border-indigo-500 block w-full p-2.5" id="foto" name="foto" type="file">
                 </div>
                 <!-- Trending checkbox -->
                 <div class="flex items-center mb-4">
-                    <input id="trending" type="checkbox" value="on" name="trending"
-                        {{ $product->trending ? 'checked' : '' }}
-                        class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
-                    <label for="trending"
-                        class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Trending</label>
+                    <input id="trending" type="checkbox" value="on" name="trending" {{ $product->trending ? 'checked' : '' }} class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 focus:ring-2">
+                    <label for="trending" class="ml-2 text-sm font-medium text-gray-900 dark:text-white ">Trending</label>
                 </div>
                 <!-- Knop voor het updaten van het product -->
-                <button type="submit"
-                    class="w-25% text-white bg-indigo-600 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-indigo-600 dark:hover:bg-indigo-700 dark:focus:ring-blue-800">Update</button>
+                <button type="submit" class="w-25% text-white bg-indigo-600 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">Update</button>
             </form>
         </div>
     </div>
